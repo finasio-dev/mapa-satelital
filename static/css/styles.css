@@ -17,4 +17,9 @@ html, body {
 .leaflet-tile-loaded {
   filter: brightness(1) invert(1) grayscale(10);
 }
-
+.dropdown-toggle {
+  margin-right: 25px;
+}
+.nav-link {
+  color: #adb5bd;
+}
