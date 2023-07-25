@@ -3,7 +3,7 @@
 const GET_ALL_SATELLITES_URL = 'https://api.tinygs.com/v1/satellites';
 // const GET_SATELLITE_URL = 'https://api.tinygs.com/v1/satellite/{id}';
 
-document.addEventListener('DOMContentLoaded', async () => {
+$(document).ready(async () => {
   const satellites = await getAllSatellites();
 
   console.log(satellites);
