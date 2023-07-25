@@ -4,8 +4,17 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.satelite {
+  width: 7vh;
 
+
+
+}
 #map {
     width: 100%;
     height: 90vh;
 }
+.leaflet-tile-loaded {
+  filter: brightness(1) invert(1) grayscale(10);
+}
+
