@@ -1,18 +1,16 @@
 /* Custom styles */
 
 html, body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.satelite {
+.logo-satelite {
   width: 7vh;
-
-
-
 }
+
 #map {
-    width: 100%;
-    height: 90vh;
+  width: 100%;
+  height: 90vh;
 }
 .leaflet-tile-loaded {
   filter: brightness(1) invert(1) grayscale(10);
@@ -22,4 +20,9 @@ html, body {
 }
 .nav-link {
   color: #adb5bd;
+}
+
+#lista-satelites {
+  max-height: 80vh;
+  overflow-y: auto;
 }
