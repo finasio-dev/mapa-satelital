@@ -19,9 +19,10 @@ $(document).ready(async () => {
 // Leaflet map
 
 const L = window.L;
-const map = L.map('map').setView([51.505, -0.09], 2);
+const map = L.map('map').setView([40.4165, -3.70256], 2);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
+  minZoom: 3,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
