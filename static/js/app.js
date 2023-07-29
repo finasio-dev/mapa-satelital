@@ -38,9 +38,13 @@ const getAllSatellites = async () => {
 
 const L = window.L;
 const map = L.map('map').setView([40.4165, -3.70256], 2);
+var imageUrl = 'static/images/png-transparent-gps-satellite-blocks-computer-icons-gps-miscellaneous-logo-symbol.png';
+var imageBounds = [[52.52437, 13.41053], [48.8534000, 2.3486000]];
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   minZoom: 3,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+//imagen sobre el mapa
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
