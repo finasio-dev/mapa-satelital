@@ -1,7 +1,7 @@
 // Get initial data from API
 
 const GET_ALL_SATELLITES_URL = 'https://api.tinygs.com/v1/satellites';
-// const GET_SATELLITE_URL = 'https://api.tinygs.com/v1/satellite/{id}';
+const GET_SATELLITE_URL = 'https://api.tinygs.com/v1/satellite/';
 
 $(document).ready(async () => {
   const satellites = await getAllSatellites();
@@ -11,9 +11,12 @@ $(document).ready(async () => {
     $("#lista-satelites").append(`<li><a class="dropdown-item satelite" href="#" id="${satelite.name}">${satelite.displayName}</a></li>`);
   })
   //Eventos
-  $(".satelite").on('click', (event) =>{
-    console.log(event.target.id);
-    //(... rest of your JS code)
+  $(".satelite").on('click', async(event) =>{
+    const satelliteById = event.target.id;
+    //encontrar datos del satélite mediante función getSatelliteById
+    const dataSatellite = await getSatelliteById(satelliteById);
+    const tle = dataSatellite.tle;
+
 });
 
 
@@ -32,6 +35,21 @@ const getAllSatellites = async () => {
       console.warn(error);
     });
   return satellites;
+};
+//get a satellites by id
+
+const getSatelliteById = async (id) => {
+  const satellite = await fetch(`${GET_SATELLITE_URL}${id}`)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Request failed!');
+    })
+    .catch((error) => {
+      console.warn(error);
+    });
+  return satellite;
 };
 
 // Leaflet map
